@@ -1,4 +1,6 @@
+![Flow daigram](https://user-images.githubusercontent.com/78478098/123542626-49d1f800-d768-11eb-9dff-8fe1ca8c08f8.jpeg)
 # Proctored-Based-Exam-System
+<br />
 ## Problem Statement
 <br />
 COVID-19 pandemic has evolved the new normal by considerably effecting student’s life to a great extent. One of the major part affected is examination. A safe and secure examination system is the utmost priority in the present time so that all the students get equal opportunity and the score obtained by each student is equivalent to one’s knowledge. Though, Current examination system in India is proctored, but do not ensure a complete transparency, resulting in increase of copy cases being ignored and the essence of evaluation on fact being hindered.
@@ -52,17 +54,19 @@ In the student section the student first needs to sign in to start the examinati
 
 ## Tech Stack
 <br />
+
 1.HTML
-<br />
+
 2.JavaScript
-<br />
+
 3.CSS
-<br />
+
 4.Python
-<br />
+
 5.Open-CV
-<br />
+
 6.MongoDb
-<br />
+
 7.Flask
-<br />
+
+![Flow daigram](https://user-images.githubusercontent.com/78478098/123542631-522a3300-d768-11eb-8a30-a6ec3ffff69e.jpeg)
