@@ -1,4 +1,5 @@
 # Proctored-Based-Exam-System
+<br />
 ## Problem Statement
 <br />
 COVID-19 pandemic has evolved the new normal by considerably effecting student’s life to a great extent. One of the major part affected is examination. A safe and secure examination system is the utmost priority in the present time so that all the students get equal opportunity and the score obtained by each student is equivalent to one’s knowledge. Though, Current examination system in India is proctored, but do not ensure a complete transparency, resulting in increase of copy cases being ignored and the essence of evaluation on fact being hindered.
@@ -6,7 +7,7 @@ COVID-19 pandemic has evolved the new normal by considerably effecting student�
 1.We aim building a Proctored based Examination System which would allow fair mode of examination ensuring that no student engages into wrong doings and student gets the score which is equivalent to his/her knowledge.
 2.Our aim is to improvise the examination environment to ensure a secure examination tool which teacher could control as well as trust.
 3.We aim at building a tool which is secure but at the same time is easy to use and lightweight so that the performance of the tool is not compromised.
-
+<br />
 
 
 ## Problem Solution
@@ -22,7 +23,7 @@ The test window will automatically be switched to Fullscreen on starting the tes
 On navigating outside the testing windows or pressing unwanted keyboard shortcuts for cheating during examination will result in the test being terminated.
 
 Lastly, all the student passwords will be encrypted and the teacher will be able to download the result in his local storage from the admin section to avoid data manipulation and stealing.
-
+<br />
 
 
 ## Implementation and Application
@@ -48,7 +49,7 @@ In the student section the student first needs to sign in to start the examinati
 4. During the examination a timer would be set in which the time duration of examination will be tracked and questions will be fetched from the .JS file uploaded by the teacher
 5.Once the student has finished the examination, he/she will submit the test after which their result will automatically get calculated along with the status whether they copied or not.
 
-
+<br />
 
 ## Tech Stack
 <br />
