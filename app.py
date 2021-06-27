@@ -49,7 +49,7 @@ class tuser(UserMixin, db.Document):
     meta = {'collection': 'tapprove'}
     approve = db.StringField()
     test_id = db.StringField(max_length=30)
-    password = db.StringField()
+    password = db.StringField(max_length=30)
     name = db.StringField()
     department = db.StringField()
 
@@ -153,15 +153,10 @@ def register():
         if form.validate():
             existing_user = User.objects(test_id=form.test_id.data).first()
             if existing_user is None:
-                # f = request.files['file']
-                # path = os.path.join(app.config['UPLOAD_FOLDER'], f.filename)
-                # f.save(path)
                 hashpass = generate_password_hash(form.password.data, method='sha256')
                 approve = "No"
                 tuser(name=form.name.data, department= form.department.data, test_id = form.test_id.data, approve=approve).save()
                 User(name=form.name.data, department= form.department.data, test_id = form.test_id.data, password = hashpass).save()
-                # admin(name=form.name.data,password = hashpass).save()
-                # login_user(hey)
                 path = "static/data/"
                 parent = str(form.test_id.data)
                 final_path = os.path.join(path,parent)
