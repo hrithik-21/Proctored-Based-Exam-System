@@ -506,6 +506,9 @@ def chart(tid):
 def root():
     return render_template('home.html')
 
+'''this end point will calculate result and save it in database'''
+
+
 @app.route('/result', methods = ['POST'])
 def result():
     detected = request.form.get('detected')
