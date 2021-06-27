@@ -2,12 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>Contact Us</title>
 <link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
 <link href="static/css/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
 <script>
-	//right click disabled
+//right click disabled
 function clickIE() {if (document.all) {(message);return false;}}
 function clickNS(e) {if
 (document.layers||(document.getElementById&&!document.all)) {
@@ -16,26 +17,25 @@ if (document.layers)
 {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
 else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
 document.oncontextmenu=new Function("return false")
- //ctrl key shortcut disabled
+ 
+//ctrl key shortcut disabled
 document.onkeydown = function(e) {
         if (e.ctrlKey) {
             return false;
         }
 };
-	</script>
+</script>
 	
-
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
 </head>
 <body>
 <div id="wrapper">
 	<div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1><a href="#">Welcome-:{{name}}</a></h1>
+			<h1><a href="#">Welcome-:{{name}}</a></h1> <!--Here the name of the teacher will appear-->
 		</div>
-		<div id="menu">
+		<!--Header-->
+		<div id="menu">  
 			<ul>
 				<li class="current_page_item"><li><a href="/direct" accesskey="1" title="">Homepage</a></li>
 				<li  class="current_page_item"><a href="#" accesskey="5" title="">Contact Us</a></li>
