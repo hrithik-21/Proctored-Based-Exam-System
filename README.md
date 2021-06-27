@@ -54,15 +54,16 @@ In the student section the student first needs to sign in to start the examinati
 ## Tech Stack
 <br />
 1.HTML
-
+<br />
 2.JavaScript
-
+<br />
 3.CSS
-
+<br />
 4.Python
-
+<br />
 5.Open-CV
-
+<br />
 6.MongoDb
-
+<br />
 7.Flask
+<br />
