@@ -1,6 +1,5 @@
 # Proctored-Based-Exam-System
-Proctored_Based_Exam_System
-Problem Statement
+## Problem Statement
 COVID-19 pandemic has evolved the new normal by considerably effecting student’s life to a great extent. One of the major part affected is examination. A safe and secure examination system is the utmost priority in the present time so that all the students get equal opportunity and the score obtained by each student is equivalent to one’s knowledge. Though, Current examination system in India is proctored, but do not ensure a complete transparency, resulting in increase of copy cases being ignored and the essence of evaluation on fact being hindered.
 
 1.We aim building a Proctored based Examination System which would allow fair mode of examination ensuring that no student engages into wrong doings and student gets the score which is equivalent to his/her knowledge.
@@ -9,7 +8,7 @@ COVID-19 pandemic has evolved the new normal by considerably effecting student�
 
 
 
-Problem Solution
+## Problem Solution
 Our testing tool will be built with the following features-
 
 The Admin will have complete right to upload the questions so that questions are not leaked.
@@ -24,7 +23,7 @@ Lastly, all the student passwords will be encrypted and the teacher will be able
 
 
 
-Implementation and Application
+## Implementation and Application
 We aim to divide the whole project into two parts- Student and Teacher.
 
 In the teacher section we will have three tabs- Home, Contact and Download Result.
@@ -48,7 +47,7 @@ In the student section the student first needs to sign in to start the examinati
 
 
 
-Tech Stack
+## Tech Stack
 
 1.HTML
 
