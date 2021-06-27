@@ -3,7 +3,23 @@
     <title>
         ADMIN
     </title>
-
+    <script>
+//ctrl key shortcut disabled
+document.onkeydown = function(e) {
+        if (e.ctrlKey) {
+            return false;
+        }
+};
+ //right click disabled
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers)
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+    </script>
     <style>
 table {
   width:100%;
@@ -65,16 +81,7 @@ th, td {
 </style>
 </head>
 <body>
-<!--<script>-->
-<!--    var request = new XMLHttpRequest();-->
-<!--    request.open("POST", "http://127.0.0.1:5001/");-->
-<!--</script>-->
-<!--{% for data in files %}-->
-<!--    <p>-->
-<!--      <b>Roll No</b>: {{ data.roll }}-->
-<!--        <b>Score</b>: {{ data.score }}-->
-<!--    </p>-->
-<!--{% endfor %}-->
+
 <table style="width:100%" id="t01">
   <caption><h1>ADMIN</h1></caption>
   <tr>
@@ -97,11 +104,6 @@ th, td {
     {% endfor %}
 </table>
 <br><br>
-<!--<div class="container" align="center">-->
-<!--		<a href="/return-files/" target="_blank"><button class='btn btn-default'>Download</button></a>-->
-<!--   </div>-->
-<!--	<div class="container" align="center">-->
-<!--<p>&copy;Logic Leads</p>-->
-<!--</div>-->
+
 </body>
 </html>
