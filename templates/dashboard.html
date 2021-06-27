@@ -29,7 +29,6 @@
     margin: auto;
 	  padding: 5px;
 	  border: 1px ;
-<!--	  width: 69%;-->
     }
 
 
@@ -37,7 +36,6 @@
 
     </style>
     <script type="text/javascript">
-//ctrl key shortcut disabled
 document.onkeydown = function(e) {
         if (e.ctrlKey) {
             return false;
@@ -69,12 +67,7 @@ function exitHandler() {
     }
 }
     </script>
-<!--<script type="text/javascript">-->
-<!--    onblur=function(){-->
-<!--    location.href="/logout";-->
-<!--    }-->
-<!--</script>-->
-
+	
 </head>
 <body>
 
@@ -114,7 +107,6 @@ function exitHandler() {
             <div class="info">4. Please ensure to press submit button after attempting questions.</div>
         </div>
         <div class="buttons">
-<!--            <button class="restart">Continue</button>-->
             <a href="/logout/{{name}}"><button class="quit" onclick="myFunction()">Exit Quiz</button></a>
             <button class="restart">Continue</button>
         </div>
