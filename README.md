@@ -69,4 +69,4 @@ In the student section the student first needs to sign in to start the examinati
 
 7.Flask
 
-![Flow daigram](https://user-images.githubusercontent.com/78478098/123542631-522a3300-d768-11eb-8a30-a6ec3ffff69e.jpeg)
+
