@@ -1,0 +1,71 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
+<link href="../static/css/result.css" rel="stylesheet" type="text/css" media="all" />
+<script>
+//ctrl key shortcut disabled
+document.onkeydown = function(e) {
+        if (e.ctrlKey) {
+            return false;
+        }
+};
+    //right click disabled
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers)
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+    </script>
+<style>
+label {
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#file-chosen{
+  margin-left: 0.3rem;
+  font-family: sans-serif;
+}
+
+</style>
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+	<div id="banner">
+		<div class="container">
+      
+      <ul class="actions">
+        <li><a href="/studentlogin" class="button">Download result</a></li>
+      </ul>
+      <br /><br />
+      <div class="title">
+				<span class="byline">Not satisfied with the result</span>
+      </div>
+      <ul class="actions">
+                <li><a href="/sawo" class="button">Raise an issue</a></li>
+			</ul>
+		</div>
+	</div>
+
+		</ul>
+	</div>
+	<div id="banner">
+		<div class="container">
+	    <p>&copy;LOGIC LEADS</p>
+		</div>
+	</div>
+</body>
+</html>

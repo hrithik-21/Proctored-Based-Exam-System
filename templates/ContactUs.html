@@ -1,0 +1,84 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
+<link href="static/css/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<script>
+	//right click disabled
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers)
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+ //ctrl key shortcut disabled
+document.onkeydown = function(e) {
+        if (e.ctrlKey) {
+            return false;
+        }
+};
+	</script>
+	
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="#">Welcome-:{{name}}</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><li><a href="/direct" accesskey="1" title="">Homepage</a></li>
+				<li  class="current_page_item"><a href="#" accesskey="5" title="">Contact Us</a></li>
+				<li class="current_page_item"><li><a href="/download" >Download Result</a></li>
+				<li class="current_page_item"><li><a href="/tout" >Logout</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div id="banner">
+		<div class="container">
+			<div class="title">
+				<h2>Contact Us</h2>
+		</div>
+		</div>
+	</div>
+	<div id="extra" class="container">
+		<div class="title">
+			<div id="three-column">
+			<div class="boxA">
+				<div class="box"> <span class="fa fa-cloud-download"></span>
+					<img src="static/img/i1.png" style="height: 100px; width: 100px;"/>
+					<p>You can also call us on the following number:<br><b>+0123456789</b></p>
+				</div>
+			</div>
+			<div class="boxB">
+				<div class="box"> <span class="fa fa-cogs"></span>
+					<img src="static/img/i2.png" style="height: 100px; width: 100px;"/>
+					<p>You can also visit our location.<br><b>Dr.D.Y. Patil Institute Of Technology,Pimpri,Pune</b></p>
+				</div>
+			</div>
+			<div class="boxC">
+				<div class="box"> <span class="fa fa-user"></span>
+					<img src="static/img/i3.png" style="height: 100px; width: 100px;"/>
+					<p> In case you have any queries or suggestions you are welcome to email us.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="featured">
+		<div class="container">
+			<p>&copy;Logic Leads</p>
+	</div>
+	</div>
+</body>
+</html>

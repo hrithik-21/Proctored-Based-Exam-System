@@ -1,0 +1,234 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Teacher</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
+<link href="static/css/default.css" rel="stylesheet" type="text/css" media="all" />
+<script>
+//ctrl key shortcut disabled
+document.onkeydown = function(e) {
+        if (e.ctrlKey) {
+            return false;
+        }
+};
+	//right click disabled
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers)
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+    </script>
+<style>
+label {
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#file-chosen{
+  margin-left: 0.3rem;
+  font-family: sans-serif;
+}
+
+</style>
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="#">{{name}}</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+				<li class="current_page_item"><li><a href="/contactus" accesskey="5" title="">Contact Us</a></li>
+				<li class="current_page_item"><li><a href="/download/" >Download Result</a></li>
+				<li class="current_page_item"><li><a href="/tout" >LogOut</a></li>
+				<li class="current_page_item"><li><a href="/seeissue/{{test}}" >Issue</a></li>
+				<li class="current_page_item"><li><a href="/chart/{{test}}" >Charts</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div id="banner">
+		<div class="container">
+			<div class="title">
+				<h2>Step 1</h2>
+				<span class="byline">Upload The Information Of Students<br>(in .CSV format Only)</span> </div>
+				<a href="return_csv">Here is a Sample CSV file format</a><br><br><br> <!--Idhar Bhai Ek Sample Dalna Hai CSV file ka-->
+			<ul class="actions">
+
+				<!-- actual upload which is hidden -->
+<!--				<input type="file" id="actual-btn" hidden/>-->
+
+<!--				&lt;!&ndash; our custom upload button &ndash;&gt;-->
+<!--				<label for="actual-btn">Choose File</label>-->
+
+<!--				&lt;!&ndash; name of file chosen &ndash;&gt;-->
+<!--				<span id="file-chosen">No file chosen</span>-->
+<!--				<script>-->
+<!--					const actualBtn = document.getElementById('actual-btn');-->
+
+<!--					const fileChosen = document.getElementById('file-chosen');-->
+
+<!--					actualBtn.addEventListener('change', function(){-->
+<!--					fileChosen.textContent = this.files[0].name-->
+<!--					})-->
+<!--				</script>-->
+<!--				<li><a href="#" class="button">Upload File</a></li>-->
+				<form action="/csvfile" method="post" enctype = "multipart/form-data" style="padding-top: 25px;">
+<!--										<label for="files">Select files:</label><br>-->
+					<input style="border: 1px solid #fff; margin:auto;" type="file" id="files" name="file[]" multiple><br><br>
+					<button 0type="submit" style="display: block; margin:auto;color:black">Upload</button>
+				</form>
+				{% if valnn is defined %}
+				{% if message1 is defined %}
+				<div class="alert alert-danger col-md-4 col-md-offset-4 " role="alert">
+					{{message1}}
+				</div>
+				{% endif %}
+				{% endif %}
+				{% if valnnn is defined %}
+				{% if message is defined %}
+				<div class="alert alert-success col-md-4 col-md-offset-4" role="alert">
+					{{message}}
+				</div>
+				{% endif %}
+				{% endif %}
+				{% if msgval is defined %}
+				{% if message is defined %}
+				<div class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
+					{{message}}
+				</div>
+				{% endif %}
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+	<div id="extra" class="container">
+		<div class="title">
+			<h2>Step 2</h2>
+			<span class="byline">Upload The Image Of The Student Here<br>(The File Name is To Be Similar To The Student Roll Number)</span> </div>
+		<div id="three-column">
+			<div class="boxC">
+				<div class="box"> <span class="fa fa-user"></span>
+					<p>For Example:</p>
+					<img src="static/img/2.Rohit.jpg" style="height:100px; width:100px"></img>
+					<p>324321.jpg</p>
+					<p>The Student Roll No. is "324321" thus the file name is 324321.jpg</p>
+				</div>
+			</div>
+		</div>
+
+		<ul class="actions">
+<!--			&lt;!&ndash; actual upload which is hidden &ndash;&gt;-->
+<!--			<input type="file" id="actual-btn1" hidden/>-->
+
+<!--			&lt;!&ndash; our custom upload button &ndash;&gt;-->
+<!--			<label for="actual-btn1">Choose File</label>-->
+
+<!--			&lt;!&ndash; name of file chosen &ndash;&gt;-->
+<!--			<span id="file-chosen1">No file chosen</span>-->
+<!--			<script>-->
+<!--				const actualBtn1 = document.getElementById('actual-btn1');-->
+
+<!--				const fileChosen1 = document.getElementById('file-chosen1');-->
+
+<!--				actualBtn1.addEventListener('change', function(){-->
+<!--				fileChosen1.textContent = this.files[0].name-->
+<!--				})-->
+<!--			</script>-->
+<!--			<li><a href="#" class="button">Upload Image</a></li>-->
+			<form action="/image" method="post" enctype = "multipart/form-data" style="padding-top: 25px;">
+<!--										<label for="files">Select files:</label><br>-->
+					<input style="border: 1px solid #fff; margin:auto;" type="file" id="files" name="file[]" multiple><br><br>
+					<button type="submit" style="display: block; margin:auto;color:black">Upload Image</button>
+				</form>
+			{% if val is defined %}
+			{% if message1 is defined %}
+			<div class="alert alert-danger col-md-4 col-md-offset-2" role="alert">
+				{{message1}}
+			</div>
+			{% endif %}
+			{% endif %}
+
+			{% if valn is defined %}
+			{% if message1 is defined %}
+			<div class="alert alert-success col-md-4 col-md-offset-2" role="alert">
+				{{message1}}
+			</div>
+			{% endif %}
+			{% endif %}
+
+			{% if fmsgval is defined %}
+			{% if message1 is defined %}
+			<div class="alert alert-danger col-md-4 col-md-offset-2" role="alert">
+				{{message1}}
+			</div>
+			{% endif %}
+			{% endif %}
+		</ul>
+	</div>
+	<div id="featured">
+		<div class="container">
+			<div class="title">
+				<h2>Step 3</h2>
+				<span class="byline">Here you need To Make Changes In The JQuery file replacing the sample question and options with yours.You can also copy paste the questions and options in case you need more questions.</span> </div>
+				<a href="#">Here is a video tutorial for making changes in the JQuery file.</a><!--Video Tutorial-->
+		</div>
+		<ul class="actions">
+			<li><a href="/return_jquery" class="button">Make Changes</a></li><br><br><!--Idhar Bhai Apan JQuery editor dalenge-->
+			<form action="/question" method="post" enctype = "multipart/form-data" style="padding-top: 25px;">
+<!--										<label for="files">Select files:</label><br>-->
+					<input style="border: 1px solid #fff; margin:auto;" type="file" id="files" name="file[]" multiple><br><br>
+					<button type="submit" style="display: block; margin:auto;color:black">Upload Question</button>
+				</form>
+			{% if valnn3 is defined %}
+				{% if message13 is defined %}
+				<div class="alert alert-danger col-md-4 col-md-offset-4 " role="alert">
+					{{message13}}
+				</div>
+				{% endif %}
+				{% endif %}
+				{% if valnnn3 is defined %}
+				{% if message3 is defined %}
+				<div class="alert alert-success col-md-4 col-md-offset-4" role="alert">
+					{{message3}}
+				</div>
+				{% endif %}
+				{% endif %}
+				{% if msgval3 is defined %}
+				{% if message3 is defined %}
+				<div class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
+					{{message3}}
+				</div>
+				{% endif %}
+				{% endif %}
+			<br><br><br><br>
+			<br><br>
+			<p><b><u>Note:</u></b>In case you face any issues in understanding or usebaility you can <a href="/contactus">Contact Us</a>.We will be most happy to help you out.</p>
+		</ul>
+	</div>
+	<div id="banner">
+		<div class="container">
+	    <p>&copy;Logic Leads</p>
+		</div>
+	</div>
+</body>
+</html>

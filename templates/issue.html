@@ -1,0 +1,95 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Raise an Issue</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!-- <link rel="stylesheet" href="static/css/style.css" /> -->
+	
+	<link rel="stylesheet" href="../static/css/issue.css" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+
+	<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito:wght@300;400&family=Roboto:wght@300&display=swap"
+	rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Noto+Serif+JP&family=Roboto:wght@300&display=swap"rel="stylesheet" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+		<link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16">
+
+
+</head>
+<body>
+<section id="HOME">
+
+	<!-- <section class="sect">
+		{% if err %}
+		<div id="fail" style="margin: 10px;" class="alert alert-danger" role="alert">
+			<strong>Missing!&nbsp;</strong>
+			{{err}}
+		</div>
+		{% endif %}
+	</section> -->
+
+
+  <form action="/issue" method="post">
+
+	<u><h1>Raise an Issue</h1></u>
+	<p style="padding-left: 10%;"><b>Note-</b> Once you raise an issue you will be reverted back in 24 hours.</p>
+		<br/><br/>
+	<fieldset>
+		<legend><span class="number">1</span>What is your name?</legend>
+		<div class="form-group ">
+			<input type="text" id="name" name="name" placeholder="Full Name" class="form-control" required>
+		</div>
+	  
+		<legend><span class="number">2</span>What is your Roll No.?</legend>
+		
+		<div class="form-group ">
+			<input type="text" id="roll_no" name="roll_id" placeholder="Roll No." class="form-control"
+				required>
+		</div>
+		<legend><span class="number">3</span>What is Test Id?</legend>
+		<div class="form-group ">
+			<input type="text" id="tid" name="test_id" placeholder="Test Id" class="form-control" required>
+		</div>
+		<legend><span class="number">4</span>What is your email address?</legend>
+	
+		<div class="form-group">
+			<input type="email" id="email" name="email" placeholder="Email" class="form-control" required>
+		</div>
+
+
+		<legend><span class="number">5</span>What issue are you facing?</legend>
+		<div class="form-group">
+			<input type="text" id="issue" name="issue" class="form-control" placeholder="Issue" required>
+		</div>
+	
+	</fieldset>
+<div class="form-group">
+	<strong>By submitting this form,</strong><br />
+		I confirm that the information I have provided in here is complete and accurate to the best of my knowledge.	
+</div>
+	<button style="background-color:#6fb0db" id="submit" type="submit" >Submit</button>
+  </form>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+crossorigin="anonymous"></script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+crossorigin="anonymous"></script>
+
+<!-- <script src="{{url_for('static', filename='js/valid-details.js')}}"></script>
+<script src="{{url_for('static', filename='js/java.js')}}"></script> -->
+
+
+
+</body>
+</html>

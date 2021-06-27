@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="static/css/style1.css">
+    <style>
+        #my_camera{
+         width: 320px;
+         height: 240px;
+         border: 1px solid black;
+        }
+    </style>
+    <!-- FontAweome CDN Link for Icons-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript" src="static/js/webcamjs/webcam.min.js"></script>
+    <style>
+    .dash{
+    margin: auto;
+	  padding: 1px;
+	  border: 1px ;
+	  width: 80%;
+    }
+
+    .name{
+    margin: auto;
+	  padding: 5px;
+	  border: 1px ;
+<!--	  width: 69%;-->
+    }
+
+
+
+
+    </style>
+    <script type="text/javascript">
+//ctrl key shortcut disabled
+document.onkeydown = function(e) {
+        if (e.ctrlKey) {
+            return false;
+        }
+};
+
+
+//right click disabled
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers)
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+
+//fullscreen leaving disabled
+document.addEventListener('fullscreenchange', exitHandler);
+document.addEventListener('webkitfullscreenchange', exitHandler);
+document.addEventListener('mozfullscreenchange', exitHandler);
+document.addEventListener('MSFullscreenChange', exitHandler);
+
+function exitHandler() {
+    if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
+        var request = new XMLHttpRequest();
+                request.open("GET", "http://127.0.0.1:5000/logout.html/{{name}}/{{test}}");
+                window.location.replace("login.html/{{name}}/{{test}}");
+    }
+}
+    </script>
+<!--<script type="text/javascript">-->
+<!--    onblur=function(){-->
+<!--    location.href="/logout";-->
+<!--    }-->
+<!--</script>-->
+
+</head>
+<body>
+
+<header>
+        <div class="alert alert-danger" style="text-align: center;background-color: red;color: white;height:2rem" role="alert">
+            Do not press <strong>Esc key</strong> during the examination or the examination will be terminated.
+          </div>
+    </header>
+    <div class="name"><p style="padding-left: 65px;"><b>Student Name-:{{ name }}</b></p></div>
+    <form onsubmit="return sendinfo();" method ="get" action="/logout/{{name}}/{{test}}">
+        <button class="quit" id="exit" style="
+            position: absolute;
+           top: 340px;
+           left: 110px;
+           background-color:indigo;
+           color: white;
+           font-size: 16px;
+           padding: 10px 28px;
+           border: none;
+           cursor: pointer;
+           border-radius: 5px;
+           text-align: center;">Submit</button>
+
+    </form>
+    <div id="my_camera"></div>
+    <div id="match"></div>
+    <!-- start Quiz button -->
+    <div class="start_btn" id="toggle"><button>Start Quiz</button></div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>Some Rules of this Quiz</span></div>
+        <div class="info-list">
+            <div class="info">1. You will have only <span>100 seconds</span> per each question.</div>
+            <div class="info">2. You can't select any option once time goes off.</div>
+            <div class="info">3. Don't press any button otherwise you will be marked as cheated.</div>
+            <div class="info">4. Please ensure to press submit button after attempting questions.</div>
+        </div>
+        <div class="buttons">
+<!--            <button class="restart">Continue</button>-->
+            <a href="/logout/{{name}}"><button class="quit" onclick="myFunction()">Exit Quiz</button></a>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+
+        <header>
+            <div class="title">Quiz</div>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">100</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- Here I've inserted question from JavaScript -->
+            </div>
+            <div class="option_list">
+                <!-- Here I've inserted options from JavaScript -->
+            </div>
+        </section>
+
+        <!-- footer of Quiz Box -->
+        <footer>
+            <div class="total_que">
+                <!-- Here I've inserted Question Count Number from JavaScript -->
+            </div>
+             <button class="prev_btn">Prev Que</button>
+            <button class="next_btn">Next Que</button>
+
+        </footer>
+    </div>
+    <!-- Result Box -->
+    <div class="result_box">
+
+        <div class="buttons">
+
+            <form onsubmit="return sendinfo();" method ="get" action="/logout/{{name}}/{{test}}">
+                <button class="quit" id="exit">Submit</button>
+            </form>
+        </div>
+    </div>
+<!--    <button onclick="sendinfo()">Send</button>-->
+    <script>
+		if (document.fullscreenEnabled) {
+
+			var btn = document.getElementById("toggle");
+
+			btn.addEventListener("click", function (event) {
+
+				if (!document.fullscreenElement) {
+					document.documentElement.requestFullscreen();
+				} else {
+					document.exitFullscreen();
+				}
+
+			}, false);
+
+			document.addEventListener("fullscreenchange", function (event) {
+
+				console.log(event);
+
+			});
+
+			document.addEventListener("fullscreenerror", function (event) {
+
+				console.log(event);
+
+			});
+		}
+        </script>
+        <script>
+            if (document.fullscreenEnabled) {
+
+			var btn = document.getElementById("exit");
+
+			btn.addEventListener("click", function (event) {
+
+				if (!document.fullscreenElement) {
+
+                    document.exitFullscreen();
+				} else {
+					document.documentElement.requestFullscreen();
+				}
+
+			}, false);
+
+
+			document.addEventListener("fullscreenchange", function (event) {
+
+				console.log(event);
+
+			});
+
+			document.addEventListener("fullscreenerror", function (event) {
+
+				console.log(event);
+
+			});
+		}
+
+        Webcam.set({
+        width: 320,
+        height: 240,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+        });
+        Webcam.attach( '#my_camera' );
+
+        var detected = 0;
+        var not_detected = 0;
+
+        function take_snapshot() {
+
+        Webcam.snap( function(data_uri) {
+            console.log(detected);
+            console.log(not_detected);
+            var roll_id = "{{ roll|safe }}";
+            var formDataToSend = new FormData();
+            formDataToSend.append("image", data_uri);
+            formDataToSend.append("roll_id", roll_id)
+            var test_id = "{{test|safe}}"
+            formDataToSend.append("test",test_id);
+            var request = new XMLHttpRequest();
+            request.open("POST", "http://127.0.0.1:5001/");
+            request.send(formDataToSend);
+
+            request.onreadystatechange = function() {
+            if(request.readyState === XMLHttpRequest.DONE){
+                if (this.status == 200) {
+
+                    var match = JSON.parse(this.responseText)['match'];
+                    console.log(match);
+                    if(match==roll_id)
+                    {
+                        detected=detected+1;
+                    }
+                    else
+                    {
+                        not_detected=not_detected+1;
+                    }
+                    document.getElementById("match").innerHTML = match;
+                }
+            }
+            };
+        } );
+
+        }
+        setInterval(take_snapshot, 3000);
+
+        function sendinfo(){
+        for(i=1;i<1000;i++)
+        {
+            if(arr[i]==1)
+            {
+                userScore=userScore+1;
+            }
+        }
+            var formDataToSend = new FormData();
+            formDataToSend.append("detected", detected);
+            formDataToSend.append("not_detected", not_detected);
+            formDataToSend.append("score",userScore);
+            var roll = "{{ roll|safe }}";
+            formDataToSend.append("roll",roll);
+            var test_id = "{{test|safe}}"
+            formDataToSend.append("test",test_id);
+            var stuname = "{{name|safe}}"
+            formDataToSend.append("name",stuname);
+            var request = new XMLHttpRequest();
+            request.open("POST", "http://127.0.0.1:5000/result");
+            request.send(formDataToSend);
+       }
+
+        </script>
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+   <!--<script src="static/js/{{roll}}/questions.js"></script> -->
+   <script src="static/data/{{test}}/question/questions.js"></script>
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+    <script src="static/js/script1.js"></script>
+    <script src="static/js/script.js"></script>
+    
+</body>
