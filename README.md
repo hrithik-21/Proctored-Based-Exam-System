@@ -36,5 +36,4 @@
 5.Open http://127.0.0.1:5000/ in browser
 
 ## Video Demonstration
-      ![Video tutorial](## Video tutorial
      ![Video Tutorial](https://youtu.be/CDkeCVuLDhc))
