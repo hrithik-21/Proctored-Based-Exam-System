@@ -208,12 +208,10 @@ def seeissue(test):
     val="Yes"
     return render_template("seeissue.html", files=files, val=val)
 
-    # return render_template("index.html", name=current_user.name)
+'''This is end point for techer login'''
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    # if current_user.is_authenticated == True:
-    #     return redirect(url_for('login'))
     form = LoginForm()
     if request.method == 'POST':
         if form.validate():
@@ -235,10 +233,10 @@ def login():
                 return render_template("login.html", form=form, message=message)
     return render_template('login.html', form=form)
 
+'''This is end point for student login'''
+
 @app.route('/studentlogin', methods=['GET', 'POST'])
 def studentlogin():
-    # if current_user.is_authenticated == True:
-    #     return redirect(url_for('dashboard'))
     form = LoginForm()
     if request.method == 'POST':
         if form.validate():
