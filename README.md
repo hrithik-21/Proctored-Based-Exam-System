@@ -1,5 +1,4 @@
 # Proctored-Based-Exam-System
-<br />
 ## Problem Statement
 <br />
 COVID-19 pandemic has evolved the new normal by considerably effecting student’s life to a great extent. One of the major part affected is examination. A safe and secure examination system is the utmost priority in the present time so that all the students get equal opportunity and the score obtained by each student is equivalent to one’s knowledge. Though, Current examination system in India is proctored, but do not ensure a complete transparency, resulting in increase of copy cases being ignored and the essence of evaluation on fact being hindered.
