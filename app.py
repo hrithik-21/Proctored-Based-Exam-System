@@ -102,19 +102,19 @@ class LoginForm(FlaskForm):
 class issueform(FlaskForm):
     name = StringField('name', validators=[InputRequired()])
     department = StringField('department', validators=[InputRequired()])
-    roll_id = StringField('roll_id') #,  validators=[InputRequired(), Length(2)])
+    roll_id = StringField('roll_id') 
     test_id = StringField('test_id', validators=[InputRequired(), Length(5)])
-    email = StringField('email')#, validators=[InputRequired(), Length(5)])
-    issue = StringField('issue')#, validators=[InputRequired(), Length(5)])
+    email = StringField('email')
+    issue = StringField('issue')
     password = PasswordField('password', validators=[InputRequired(), Length(min=3, max=20)])
 
-# class record(FlaskForm):
-#     roll_id = StringField('roll_id')
-#     detected = StringField('detected')
-#     not_detected = StringField('not_detected')
+'''Here SAWO Api is integrated for user i.e teacher authentication'''
+    
 @app.route('/sawo', methods=['GET', 'POST'])
 def sawo():
     return render_template("sawo.htm")
+
+'''This is api for giving proof to student that they are cheating'''
 
 @app.route('/proof/<string:tid>/<string:roll>', methods=['GET', 'POST'])
 def images(tid,roll):
@@ -135,6 +135,7 @@ def images(tid,roll):
     print(final_list)
     return render_template("images.html",files=final_list,tid = tid)
 
+''' This will save the issue in database raised by students '''
 
 @app.route('/issue',methods=['GET', 'POST'])
 def issue():
@@ -143,6 +144,7 @@ def issue():
         sissue(name=form.name.data, roll= form.roll_id.data, test_id = form.test_id.data, email = form.email.data ,issue = form.issue.data).save()
     return render_template("issue.html")
 
+''' This is end point for teacher registration '''
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -187,6 +189,8 @@ def register():
                 message = str(form.test_id.data)+" Already Exists"
                 return render_template('register.html', form=form, message=message)
     return render_template('register.html', form=form)
+
+'''This will redirect teacher from contactus page to homepage'''
 
 @app.route('/direct')
 def direct():
