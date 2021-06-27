@@ -13,16 +13,12 @@ from datetime import date,datetime
 app = Flask(__name__)
 CORS(app)
 
+'''This function will match the faces'''
+
 @app.route('/', methods = ["POST"])
 def check_face():
     base64imagestr = request.form.get('image').split(',')[1]
     roll_id = request.form.get('roll_id')
-    # path = request.form.get('test')
-    # print(path)
-    # print(roll_id)
-    # detected = request.form.get('detected')
-    # not_detected = request.form.get('not_detected')
-    #ret = random.choice([True, False])
     img = imread(io.BytesIO(base64.b64decode(base64imagestr)))
 
     path = "../static/data/" + str(request.form.get('test')) + "/img/"
