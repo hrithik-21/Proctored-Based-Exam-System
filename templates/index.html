@@ -44,8 +44,6 @@ label {
 
 </style>
 
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
 </head>
 <body>
 <div id="wrapper">
@@ -71,29 +69,10 @@ label {
 			<div class="title">
 				<h2>Step 1</h2>
 				<span class="byline">Upload The Information Of Students<br>(in .CSV format Only)</span> </div>
-				<a href="return_csv">Here is a Sample CSV file format</a><br><br><br> <!--Idhar Bhai Ek Sample Dalna Hai CSV file ka-->
+				<a href="return_csv">Here is a Sample CSV file format</a><br><br><br> 
 			<ul class="actions">
 
-				<!-- actual upload which is hidden -->
-<!--				<input type="file" id="actual-btn" hidden/>-->
-
-<!--				&lt;!&ndash; our custom upload button &ndash;&gt;-->
-<!--				<label for="actual-btn">Choose File</label>-->
-
-<!--				&lt;!&ndash; name of file chosen &ndash;&gt;-->
-<!--				<span id="file-chosen">No file chosen</span>-->
-<!--				<script>-->
-<!--					const actualBtn = document.getElementById('actual-btn');-->
-
-<!--					const fileChosen = document.getElementById('file-chosen');-->
-
-<!--					actualBtn.addEventListener('change', function(){-->
-<!--					fileChosen.textContent = this.files[0].name-->
-<!--					})-->
-<!--				</script>-->
-<!--				<li><a href="#" class="button">Upload File</a></li>-->
 				<form action="/csvfile" method="post" enctype = "multipart/form-data" style="padding-top: 25px;">
-<!--										<label for="files">Select files:</label><br>-->
 					<input style="border: 1px solid #fff; margin:auto;" type="file" id="files" name="file[]" multiple><br><br>
 					<button 0type="submit" style="display: block; margin:auto;color:black">Upload</button>
 				</form>
@@ -137,26 +116,8 @@ label {
 		</div>
 
 		<ul class="actions">
-<!--			&lt;!&ndash; actual upload which is hidden &ndash;&gt;-->
-<!--			<input type="file" id="actual-btn1" hidden/>-->
 
-<!--			&lt;!&ndash; our custom upload button &ndash;&gt;-->
-<!--			<label for="actual-btn1">Choose File</label>-->
-
-<!--			&lt;!&ndash; name of file chosen &ndash;&gt;-->
-<!--			<span id="file-chosen1">No file chosen</span>-->
-<!--			<script>-->
-<!--				const actualBtn1 = document.getElementById('actual-btn1');-->
-
-<!--				const fileChosen1 = document.getElementById('file-chosen1');-->
-
-<!--				actualBtn1.addEventListener('change', function(){-->
-<!--				fileChosen1.textContent = this.files[0].name-->
-<!--				})-->
-<!--			</script>-->
-<!--			<li><a href="#" class="button">Upload Image</a></li>-->
 			<form action="/image" method="post" enctype = "multipart/form-data" style="padding-top: 25px;">
-<!--										<label for="files">Select files:</label><br>-->
 					<input style="border: 1px solid #fff; margin:auto;" type="file" id="files" name="file[]" multiple><br><br>
 					<button type="submit" style="display: block; margin:auto;color:black">Upload Image</button>
 				</form>
@@ -193,9 +154,9 @@ label {
 				<a href="#">Here is a video tutorial for making changes in the JQuery file.</a><!--Video Tutorial-->
 		</div>
 		<ul class="actions">
-			<li><a href="/return_jquery" class="button">Make Changes</a></li><br><br><!--Idhar Bhai Apan JQuery editor dalenge-->
+			<li><a href="/return_jquery" class="button">Make Changes</a></li><br><br>
 			<form action="/question" method="post" enctype = "multipart/form-data" style="padding-top: 25px;">
-<!--										<label for="files">Select files:</label><br>-->
+
 					<input style="border: 1px solid #fff; margin:auto;" type="file" id="files" name="file[]" multiple><br><br>
 					<button type="submit" style="display: block; margin:auto;color:black">Upload Question</button>
 				</form>
