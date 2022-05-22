@@ -324,7 +324,7 @@ def action(tid,name):
     teach.delete()
     # tuser.objects.update(teach)
     # teach = tuser.objects()
-    # print(len(teach))
+  
     teach = tuser.objects()
     files = []
     for x in teach:
