@@ -32,7 +32,7 @@
 2.Run app.py
 <br /> 
 3.Change directory to face-recognition
-<br /> 
+<br/> 
 4.Run server.py
 <br /> 
 5.Open http://127.0.0.1:5000/ in browser
