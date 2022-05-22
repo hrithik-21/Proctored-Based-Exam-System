@@ -18,7 +18,7 @@ if (document.layers)
 else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
 document.oncontextmenu=new Function("return false")
  
-//ctrl key shortcut disabled
+//ctrl key shortcut disable
 document.onkeydown = function(e) {
         if (e.ctrlKey) {
             return false;
