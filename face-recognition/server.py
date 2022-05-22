@@ -25,7 +25,7 @@ def check_face():
     print(path)
     list_img = os.listdir(path)  # list of images in directory
     base_img = []  # contain numpy array of images
-    img_class = []  # list of images without extension
+    img_class = []  # list of images without extensions
     base_encoding = []
     student_image=[]
 
